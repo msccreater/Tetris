@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://ccmek61g24gcf"]
+
+[ext_resource type="Script" uid="uid://c1xexs20lbga2" path="res://scripts/replay/ReplayListItem.gd" id="1_0m4bg"]
+
+[node name="ReplayListItem" type="HBoxContainer" unique_id=258027399]
+offset_right = 192.0
+offset_bottom = 31.0
+size_flags_horizontal = 3
+mouse_filter = 0
+script = ExtResource("1_0m4bg")
+
+[node name="LabelName" type="Label" parent="." unique_id=91531575]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "文件路径"
+
+[node name="BtnPlay" type="Button" parent="." unique_id=1065236152]
+custom_minimum_size = Vector2(60, 0)
+layout_mode = 2
+text = "播放"
+
+[node name="BtnDelete" type="Button" parent="." unique_id=958494528]
+custom_minimum_size = Vector2(60, 0)
+layout_mode = 2
+text = "删除"

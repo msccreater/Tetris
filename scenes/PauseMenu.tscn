@@ -1,0 +1,158 @@
+[gd_scene format=3 uid="uid://gpigrdwjfn2t"]
+
+[ext_resource type="Script" uid="uid://fq65e160apb4" path="res://scripts/ui/PauseMenu.gd" id="1_jvnd5"]
+
+[sub_resource type="Animation" id="Animation_wv210"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Panel:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Panel:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("ColorRect:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_a7g6x"]
+resource_name = "popup"
+length = 0.25
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Panel:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.25),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0.6, 0.6), Vector2(1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Panel:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.25),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("ColorRect:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.25),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0.5)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_jvnd5"]
+_data = {
+&"RESET": SubResource("Animation_wv210"),
+&"popup": SubResource("Animation_a7g6x")
+}
+
+[node name="PauseMenu" type="Control" unique_id=242591628]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_jvnd5")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=318803259]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.6)
+
+[node name="Panel" type="Panel" parent="." unique_id=215302254]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -150.0
+offset_top = -120.0
+offset_right = 150.0
+offset_bottom = 120.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel" unique_id=1566420388]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 12
+alignment = 1
+
+[node name="LabelTitle" type="Label" parent="Panel/VBoxContainer" unique_id=663720638]
+layout_mode = 2
+theme_override_font_sizes/font_size = 28
+text = "暂停"
+horizontal_alignment = 1
+
+[node name="ButtonResume" type="Button" parent="Panel/VBoxContainer" unique_id=960296919]
+custom_minimum_size = Vector2(200, 42)
+layout_mode = 2
+theme_override_font_sizes/font_size = 18
+text = "继续"
+
+[node name="ButtonRestart" type="Button" parent="Panel/VBoxContainer" unique_id=1278893127]
+custom_minimum_size = Vector2(200, 42)
+layout_mode = 2
+theme_override_font_sizes/font_size = 18
+text = "重新开始"
+
+[node name="ButtonMenu" type="Button" parent="Panel/VBoxContainer" unique_id=477207520]
+custom_minimum_size = Vector2(200, 42)
+layout_mode = 2
+theme_override_font_sizes/font_size = 18
+text = "返回主菜单"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=494306037]
+libraries/ = SubResource("AnimationLibrary_jvnd5")

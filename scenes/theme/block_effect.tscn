@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://cmt6mrdgmh622"]
+
+[ext_resource type="Script" uid="uid://boeupljtaejq7" path="res://scenes/theme/block_effect.gd" id="1_73sah"]
+
+[node name="BlockEffect" type="Node2D" unique_id=1097983023]
+script = ExtResource("1_73sah")

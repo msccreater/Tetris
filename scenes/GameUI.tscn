@@ -1,0 +1,115 @@
+[gd_scene format=3 uid="uid://uiv24gfnw43"]
+
+[ext_resource type="Script" uid="uid://c2qf2w4ooxa1o" path="res://scripts/ui/GameUI.gd" id="1_jkspe"]
+
+[node name="GameUI" type="Control" unique_id=422517282]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_jkspe")
+
+[node name="Panel" type="Panel" parent="." unique_id=102071173]
+custom_minimum_size = Vector2(220, 0)
+layout_mode = 1
+offset_left = 10.0
+offset_top = 10.0
+offset_right = 230.0
+offset_bottom = 10.0
+
+[node name="MarginContainer" type="MarginContainer" parent="Panel" unique_id=528930376]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_bottom = 168.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_top = 12
+theme_override_constants/margin_right = 12
+theme_override_constants/margin_bottom = 12
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel/MarginContainer" unique_id=1309573075]
+layout_mode = 2
+theme_override_constants/separation = 6
+
+[node name="Mode" type="HBoxContainer" parent="Panel/MarginContainer/VBoxContainer" unique_id=2083729707]
+layout_mode = 2
+
+[node name="LabelMode" type="Label" parent="Panel/MarginContainer/VBoxContainer/Mode" unique_id=354789782]
+unique_name_in_owner = true
+layout_mode = 2
+text = "ENDLESS"
+
+[node name="HSeparator" type="HSeparator" parent="Panel/MarginContainer/VBoxContainer" unique_id=1405942763]
+layout_mode = 2
+
+[node name="ScoreContainer" type="HBoxContainer" parent="Panel/MarginContainer/VBoxContainer" unique_id=797079731]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="LabelScoreTitle" type="Label" parent="Panel/MarginContainer/VBoxContainer/ScoreContainer" unique_id=566087678]
+layout_mode = 2
+theme_override_font_sizes/font_size = 14
+text = "SCORE"
+
+[node name="LabelScoreValue" type="Label" parent="Panel/MarginContainer/VBoxContainer/ScoreContainer" unique_id=634706725]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 22
+text = "0"
+horizontal_alignment = 2
+
+[node name="LinesContainer" type="HBoxContainer" parent="Panel/MarginContainer/VBoxContainer" unique_id=1165331291]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="LabelLinesTitle" type="Label" parent="Panel/MarginContainer/VBoxContainer/LinesContainer" unique_id=1837447970]
+layout_mode = 2
+theme_override_font_sizes/font_size = 14
+text = "LINES"
+
+[node name="LabelLinesValue" type="Label" parent="Panel/MarginContainer/VBoxContainer/LinesContainer" unique_id=354574875]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 22
+text = "0/40"
+horizontal_alignment = 2
+
+[node name="Time" type="HBoxContainer" parent="Panel/MarginContainer/VBoxContainer" unique_id=817922994]
+layout_mode = 2
+
+[node name="LabelTimeTitle" type="Label" parent="Panel/MarginContainer/VBoxContainer/Time" unique_id=1716251758]
+layout_mode = 2
+theme_override_font_sizes/font_size = 14
+text = "TIME"
+
+[node name="LabelTimeValue" type="Label" parent="Panel/MarginContainer/VBoxContainer/Time" unique_id=961573378]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 22
+text = "0'00.00"
+horizontal_alignment = 2
+
+[node name="PPS" type="HBoxContainer" parent="Panel/MarginContainer/VBoxContainer" unique_id=1701473765]
+layout_mode = 2
+
+[node name="LabelPPSTitle" type="Label" parent="Panel/MarginContainer/VBoxContainer/PPS" unique_id=675158815]
+layout_mode = 2
+theme_override_font_sizes/font_size = 14
+text = "PPS"
+
+[node name="LabelPPSValue" type="Label" parent="Panel/MarginContainer/VBoxContainer/PPS" unique_id=1296727954]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 22
+text = "0.00"
+horizontal_alignment = 2

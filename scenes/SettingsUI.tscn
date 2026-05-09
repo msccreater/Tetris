@@ -1,0 +1,350 @@
+[gd_scene format=3 uid="uid://c12q1dvnp2glq"]
+
+[ext_resource type="Script" uid="uid://nchlsyosbs5m" path="res://scripts/ui/SettingsUI.gd" id="1_dq6ke"]
+
+[sub_resource type="Theme" id="Theme_dq6ke"]
+default_font_size = 16
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dq6ke"]
+content_margin_left = 12.0
+content_margin_top = 12.0
+content_margin_right = 12.0
+content_margin_bottom = 12.0
+bg_color = Color(0.2901961, 0.2901961, 0.2901961, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.3529412, 0.3529412, 0.3529412, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_q0hoj"]
+content_margin_left = 12.0
+content_margin_top = 12.0
+content_margin_right = 12.0
+content_margin_bottom = 12.0
+bg_color = Color(0.2901961, 0.2901961, 0.2901961, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.3529412, 0.3529412, 0.3529412, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vhr25"]
+content_margin_left = 5.0
+content_margin_top = 5.0
+content_margin_right = 5.0
+content_margin_bottom = 5.0
+bg_color = Color(0.16470589, 0.16470589, 0.16470589, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hm8xv"]
+bg_color = Color(1, 0.8, 0, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ajl2u"]
+content_margin_left = 8.0
+content_margin_top = 8.0
+content_margin_right = 8.0
+content_margin_bottom = 8.0
+bg_color = Color(0.4, 0.4, 0.4, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_h7xgr"]
+bg_color = Color(0.33333334, 0.33333334, 0.33333334, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_edrav"]
+bg_color = Color(0.46666667, 0.46666667, 0.46666667, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_v6r84"]
+content_margin_left = 8.0
+content_margin_top = 8.0
+content_margin_right = 8.0
+content_margin_bottom = 8.0
+bg_color = Color(0.2901961, 0.5647059, 0.8509804, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gcb1t"]
+bg_color = Color(0.22745098, 0.5019608, 0.7882353, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3eoag"]
+bg_color = Color(0.3529412, 0.627451, 0.9137255, 1)
+
+[sub_resource type="Animation" id="Animation_dq6ke"]
+resource_name = "fade_in"
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_q0hoj"]
+_data = {
+&"fade_in": SubResource("Animation_dq6ke")
+}
+
+[node name="SettingsUI" type="Control" unique_id=1116987088]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_dq6ke")
+script = ExtResource("1_dq6ke")
+
+[node name="MainContainer" type="VBoxContainer" parent="." unique_id=1840888103]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -198.0
+offset_top = -217.5
+offset_right = 198.0
+offset_bottom = 217.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 16
+alignment = 1
+
+[node name="TitleLabel" type="Label" parent="MainContainer" unique_id=1518887055]
+layout_mode = 2
+theme_override_font_sizes/font_size = 28
+text = "设置"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AudioSection" type="PanelContainer" parent="MainContainer" unique_id=1572095528]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_dq6ke")
+
+[node name="AudioVBox" type="VBoxContainer" parent="MainContainer/AudioSection" unique_id=167657429]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="AudioTitle" type="Label" parent="MainContainer/AudioSection/AudioVBox" unique_id=1330600099]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.8, 0, 1)
+theme_override_font_sizes/font_size = 18
+text = " 🔊 音频设置"
+
+[node name="MusicRow" type="HBoxContainer" parent="MainContainer/AudioSection/AudioVBox" unique_id=1639030819]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="MusicLabel" type="Label" parent="MainContainer/AudioSection/AudioVBox/MusicRow" unique_id=1487216549]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "音乐"
+horizontal_alignment = 1
+
+[node name="CheckMusic" type="CheckBox" parent="MainContainer/AudioSection/AudioVBox/MusicRow" unique_id=987131471]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(120, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="SFXRow" type="HBoxContainer" parent="MainContainer/AudioSection/AudioVBox" unique_id=2130824184]
+layout_mode = 2
+theme_override_constants/separation = 12
+alignment = 1
+
+[node name="SFXLabel" type="Label" parent="MainContainer/AudioSection/AudioVBox/SFXRow" unique_id=892959430]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "音效"
+horizontal_alignment = 1
+
+[node name="CheckSfx" type="CheckBox" parent="MainContainer/AudioSection/AudioVBox/SFXRow" unique_id=1781721671]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(120, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="ControlSection" type="PanelContainer" parent="MainContainer" unique_id=842307550]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_q0hoj")
+
+[node name="ControlVBox" type="VBoxContainer" parent="MainContainer/ControlSection" unique_id=1651183635]
+layout_mode = 2
+
+[node name="ControlTitle" type="Label" parent="MainContainer/ControlSection/ControlVBox" unique_id=883174884]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.8, 0, 1)
+theme_override_font_sizes/font_size = 18
+text = "🎮 操控设置"
+
+[node name="DASRow" type="HBoxContainer" parent="MainContainer/ControlSection/ControlVBox" unique_id=1878164842]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="DASLabel" type="Label" parent="MainContainer/ControlSection/ControlVBox/DASRow" unique_id=1329671863]
+custom_minimum_size = Vector2(90, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0.8666667, 0.8666667, 0.8666667, 1)
+theme_override_font_sizes/font_size = 14
+text = "DAS 延迟"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="DASSlider" type="HSlider" parent="MainContainer/ControlSection/ControlVBox/DASRow" unique_id=1846810281]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(180, 24)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/slider = SubResource("StyleBoxFlat_vhr25")
+theme_override_styles/grabber_area = SubResource("StyleBoxFlat_hm8xv")
+min_value = 1.0
+max_value = 60.0
+value = 12.0
+
+[node name="DASValue" type="SpinBox" parent="MainContainer/ControlSection/ControlVBox/DASRow" unique_id=1038206026]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(60, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+max_value = 60.0
+value = 12.0
+alignment = 1
+
+[node name="ARRRow" type="HBoxContainer" parent="MainContainer/ControlSection/ControlVBox" unique_id=1392244044]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="ARRLabel" type="Label" parent="MainContainer/ControlSection/ControlVBox/ARRRow" unique_id=753309329]
+custom_minimum_size = Vector2(90, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0.8666667, 0.8666667, 0.8666667, 1)
+theme_override_font_sizes/font_size = 14
+text = "ARR 间隔"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="ARRSlider" type="HSlider" parent="MainContainer/ControlSection/ControlVBox/ARRRow" unique_id=425757168]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(180, 24)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/slider = SubResource("StyleBoxFlat_vhr25")
+theme_override_styles/grabber_area = SubResource("StyleBoxFlat_hm8xv")
+max_value = 60.0
+value = 1.0
+
+[node name="ARRValue" type="SpinBox" parent="MainContainer/ControlSection/ControlVBox/ARRRow" unique_id=1552068076]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+max_value = 60.0
+value = 1.0
+alignment = 1
+
+[node name="SoftDASRow" type="HBoxContainer" parent="MainContainer/ControlSection/ControlVBox" unique_id=273028729]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="SoftDASLabel" type="Label" parent="MainContainer/ControlSection/ControlVBox/SoftDASRow" unique_id=693920738]
+custom_minimum_size = Vector2(90, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0.8666667, 0.8666667, 0.8666667, 1)
+theme_override_font_sizes/font_size = 14
+text = " 软降 DAS"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="SoftDASSlider" type="HSlider" parent="MainContainer/ControlSection/ControlVBox/SoftDASRow" unique_id=837635347]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(180, 24)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/slider = SubResource("StyleBoxFlat_vhr25")
+theme_override_styles/grabber_area = SubResource("StyleBoxFlat_hm8xv")
+min_value = 1.0
+max_value = 60.0
+value = 8.0
+
+[node name="SoftDASValue" type="SpinBox" parent="MainContainer/ControlSection/ControlVBox/SoftDASRow" unique_id=2073903640]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+min_value = 1.0
+max_value = 60.0
+value = 8.0
+alignment = 1
+
+[node name="SoftARRRow" type="HBoxContainer" parent="MainContainer/ControlSection/ControlVBox" unique_id=888412747]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="SoftARRLabel" type="Label" parent="MainContainer/ControlSection/ControlVBox/SoftARRRow" unique_id=1770981530]
+custom_minimum_size = Vector2(90, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0.8666667, 0.8666667, 0.8666667, 1)
+theme_override_font_sizes/font_size = 14
+text = "软降 ARR"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="SoftARRSlider" type="HSlider" parent="MainContainer/ControlSection/ControlVBox/SoftARRRow" unique_id=1952810091]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(180, 24)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/slider = SubResource("StyleBoxFlat_vhr25")
+theme_override_styles/grabber_area = SubResource("StyleBoxFlat_hm8xv")
+max_value = 60.0
+value = 1.0
+
+[node name="SoftARRValue" type="SpinBox" parent="MainContainer/ControlSection/ControlVBox/SoftARRRow" unique_id=2125095012]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+max_value = 60.0
+value = 1.0
+alignment = 1
+
+[node name="BottomBar" type="HBoxContainer" parent="MainContainer" unique_id=1658366287]
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_constants/separation = 12
+alignment = 1
+
+[node name="ResetBtn" type="Button" parent="MainContainer/BottomBar" unique_id=787689651]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(120, 40)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_ajl2u")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_h7xgr")
+theme_override_styles/hover = SubResource("StyleBoxFlat_edrav")
+text = "恢复默认"
+
+[node name="BackBtn" type="Button" parent="MainContainer/BottomBar" unique_id=909822496]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(120, 40)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_v6r84")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_gcb1t")
+theme_override_styles/hover = SubResource("StyleBoxFlat_3eoag")
+text = "返回主菜单"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1125969201]
+libraries/ = SubResource("AnimationLibrary_q0hoj")

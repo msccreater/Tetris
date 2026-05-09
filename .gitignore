@@ -1,0 +1,10 @@
+.godot/
+*.import
+.import/
+export_presets.cfg
+*.translation
+*.tmp
+*.bak
+*~
+*.uid
+.doc/

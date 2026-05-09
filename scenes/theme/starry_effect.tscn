@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://o7t8ski4qmfd"]
+
+[ext_resource type="Script" uid="uid://7fvw4hssjwpj" path="res://scenes/theme/starry_effect.gd" id="1_w2d6n"]
+
+[node name="StarryEffect" type="Node2D" unique_id=325099756]
+script = ExtResource("1_w2d6n")

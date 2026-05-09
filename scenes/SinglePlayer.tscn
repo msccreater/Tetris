@@ -1,0 +1,80 @@
+[gd_scene format=3 uid="uid://cl7jwqpjbho3e"]
+
+[ext_resource type="Script" uid="uid://dq374d5er7w1v" path="res://scripts/SinglePlayer.gd" id="1_xk2k0"]
+[ext_resource type="Script" uid="uid://bsb0kp06h5jhv" path="res://scripts/core/BoardLogic.gd" id="2_td856"]
+[ext_resource type="Script" uid="uid://dlroovaebduls" path="res://scripts/renderer/BoardRenderer.gd" id="3_1hkub"]
+[ext_resource type="Script" uid="uid://51j5jch3dack" path="res://scripts/input/InputHandler.gd" id="4_3r1jc"]
+[ext_resource type="Script" uid="uid://dvl2rypx4js16" path="res://scripts/renderer/ParticleSystem.gd" id="4_othy2"]
+[ext_resource type="Texture2D" uid="uid://b1idm4rhot8ru" path="res://assets/images/c7.png" id="4_ya3jx"]
+[ext_resource type="Texture2D" uid="uid://crguixyhplpvx" path="res://assets/images/next.png" id="5_0ho4k"]
+[ext_resource type="Texture2D" uid="uid://c4xfnakr7my6v" path="res://assets/images/mid.png" id="6_fkou2"]
+[ext_resource type="Script" uid="uid://dlo33gqfd44t" path="res://scripts/replay/ReplayPlayer.gd" id="7_6dvpa"]
+[ext_resource type="PackedScene" uid="uid://uiv24gfnw43" path="res://scenes/GameUI.tscn" id="7_gbdq6"]
+[ext_resource type="Script" uid="uid://b625ls7qgq10w" path="res://scripts/renderer/NoteSystem.gd" id="7_r50ok"]
+[ext_resource type="PackedScene" uid="uid://c2iihc1ef21a1" path="res://scenes/GameOverUI.tscn" id="8_6dvpa"]
+[ext_resource type="PackedScene" uid="uid://gpigrdwjfn2t" path="res://scenes/PauseMenu.tscn" id="8_7nqyk"]
+[ext_resource type="PackedScene" uid="uid://b6fod1mb6yb5k" path="res://scenes/ReplayAnalyzer.tscn" id="10_gbdq6"]
+[ext_resource type="PackedScene" uid="uid://da73tv2x25wge" path="res://scenes/ReadyUI.tscn" id="15_fkou2"]
+
+[node name="SinglePlayer" type="Node2D" unique_id=899846310]
+script = ExtResource("1_xk2k0")
+
+[node name="BoardLogic" type="Node" parent="." unique_id=152531747]
+script = ExtResource("2_td856")
+
+[node name="BoardRenderer" type="Node2D" parent="." unique_id=245908822 node_paths=PackedStringArray("board_logic")]
+script = ExtResource("3_1hkub")
+board_logic = NodePath("../BoardLogic")
+block_texture = ExtResource("4_ya3jx")
+next_texture = ExtResource("5_0ho4k")
+mid_texture = ExtResource("6_fkou2")
+
+[node name="ParticleSystem" type="Node2D" parent="." unique_id=2065753619]
+script = ExtResource("4_othy2")
+
+[node name="NoteSystem" type="Node2D" parent="." unique_id=1485475818]
+script = ExtResource("7_r50ok")
+
+[node name="InputHandler" type="Node" parent="." unique_id=1786996974 node_paths=PackedStringArray("board_logic")]
+script = ExtResource("4_3r1jc")
+board_logic = NodePath("../BoardLogic")
+
+[node name="ReplayPlayer" type="Node" parent="." unique_id=1199821644 node_paths=PackedStringArray("board_logic")]
+script = ExtResource("7_6dvpa")
+board_logic = NodePath("../BoardLogic")
+
+[node name="UILayer" type="CanvasLayer" parent="." unique_id=1906697219]
+
+[node name="ReadyUI" parent="UILayer" unique_id=388584877 instance=ExtResource("15_fkou2")]
+unique_name_in_owner = true
+visible = false
+mouse_filter = 2
+
+[node name="GameUI" parent="UILayer" unique_id=422517282 node_paths=PackedStringArray("board_logic") instance=ExtResource("7_gbdq6")]
+unique_name_in_owner = true
+anchors_preset = 1
+anchor_left = 1.0
+anchor_bottom = 0.0
+offset_left = -252.0
+offset_right = -252.0
+grow_horizontal = 0
+grow_vertical = 1
+board_logic = NodePath("../../BoardLogic")
+
+[node name="PauseMenu" parent="UILayer" unique_id=242591628 instance=ExtResource("8_7nqyk")]
+unique_name_in_owner = true
+visible = false
+
+[node name="GameOverUI" parent="UILayer" unique_id=693724817 instance=ExtResource("8_6dvpa")]
+unique_name_in_owner = true
+visible = false
+
+[node name="ReplayAnalyzer" parent="UILayer" unique_id=1259547645 node_paths=PackedStringArray("replay_player") instance=ExtResource("10_gbdq6")]
+unique_name_in_owner = true
+visible = false
+anchors_preset = -1
+anchor_left = 1.0
+offset_left = -300.0
+grow_horizontal = 0
+size_flags_vertical = 3
+replay_player = NodePath("../../ReplayPlayer")

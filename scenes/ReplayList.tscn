@@ -1,0 +1,59 @@
+[gd_scene format=3 uid="uid://ctxqwov56lbmv"]
+
+[ext_resource type="Script" uid="uid://woyjjelt6mps" path="res://scripts/replay/ReplayList.gd" id="1_e0hh4"]
+
+[node name="ReplayList" type="Control" unique_id=196674265]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_e0hh4")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=11723178]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.09019608, 0.09019608, 0.09019608, 1)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=2015799289]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer" unique_id=1936082498]
+layout_mode = 2
+
+[node name="BtnBack" type="Button" parent="VBoxContainer/HBoxContainer" unique_id=768595188]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(100, 36)
+layout_mode = 2
+text = "返回"
+
+[node name="LabelTitle" type="Label" parent="VBoxContainer/HBoxContainer" unique_id=2019670123]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 24
+text = "录像列表"
+horizontal_alignment = 1
+
+[node name="HSeparator" type="HSeparator" parent="VBoxContainer" unique_id=568879023]
+layout_mode = 2
+
+[node name="ScrollContainer" type="ScrollContainer" parent="VBoxContainer" unique_id=1962787801]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="ItemContainer" type="VBoxContainer" parent="VBoxContainer/ScrollContainer" unique_id=315044551]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(300, 200)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3

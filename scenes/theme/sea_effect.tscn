@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://bj8kelplv33yp"]
+
+[ext_resource type="Script" uid="uid://dkc5r82loirng" path="res://scenes/theme/sea_effect.gd" id="1_tp0mf"]
+
+[node name="SeaEffect" type="Node2D" unique_id=2014600577]
+script = ExtResource("1_tp0mf")

@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://b7kak5iv82tlh"]
+
+[ext_resource type="Script" uid="uid://b8eqlfxoo6k3n" path="res://scenes/theme/heart_effect.gd" id="1_60gi1"]
+
+[node name="HeartEffect" type="Node2D" unique_id=685213793]
+script = ExtResource("1_60gi1")

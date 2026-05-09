@@ -1,0 +1,114 @@
+[gd_scene format=3 uid="uid://b6fod1mb6yb5k"]
+
+[ext_resource type="Script" uid="uid://caseupeopyt70" path="res://scripts/replay/ReplayAnalyzer.gd" id="1_0gp36"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0gp36"]
+content_margin_left = 8.0
+content_margin_top = 2.0
+content_margin_right = 8.0
+content_margin_bottom = 2.0
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[node name="ReplayAnalyzer" type="Control" unique_id=1259547645]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_0gp36")
+
+[node name="Panel" type="Panel" parent="." unique_id=2061019836]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(300, 600)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel" unique_id=1648318301]
+custom_minimum_size = Vector2(300, 600)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="LabelStep" type="Label" parent="Panel/VBoxContainer" unique_id=1599941211]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(250, 0)
+layout_mode = 2
+text = "Step 0/0"
+
+[node name="HBoxTop" type="HBoxContainer" parent="Panel/VBoxContainer" unique_id=1739011828]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+
+[node name="BtnPrev" type="Button" parent="Panel/VBoxContainer/HBoxTop" unique_id=548583823]
+unique_name_in_owner = true
+layout_mode = 2
+focus_mode = 0
+text = "上一步"
+
+[node name="BtnNext" type="Button" parent="Panel/VBoxContainer/HBoxTop" unique_id=335451833]
+unique_name_in_owner = true
+layout_mode = 2
+focus_mode = 0
+text = "下一步"
+
+[node name="BtnPlay" type="Button" parent="Panel/VBoxContainer/HBoxTop" unique_id=1731364072]
+unique_name_in_owner = true
+layout_mode = 2
+focus_mode = 0
+text = "播放"
+
+[node name="BtnPause" type="Button" parent="Panel/VBoxContainer/HBoxTop" unique_id=426461285]
+unique_name_in_owner = true
+layout_mode = 2
+focus_mode = 0
+text = "暂停"
+
+[node name="LabelStatus" type="Label" parent="Panel/VBoxContainer/HBoxTop" unique_id=1676430828]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_0gp36")
+text = "播放状态"
+horizontal_alignment = 1
+
+[node name="HSlider" type="HSlider" parent="Panel/VBoxContainer" unique_id=151329015]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 8
+
+[node name="HBoxSpeed" type="HBoxContainer" parent="Panel/VBoxContainer" unique_id=1574476873]
+layout_mode = 2
+size_flags_vertical = 8
+
+[node name="BtnSpeedDown" type="Button" parent="Panel/VBoxContainer/HBoxSpeed" unique_id=363977707]
+unique_name_in_owner = true
+layout_mode = 2
+text = "减速"
+
+[node name="LabelSpeed" type="Label" parent="Panel/VBoxContainer/HBoxSpeed" unique_id=1681164473]
+unique_name_in_owner = true
+layout_mode = 2
+text = "1.0x"
+
+[node name="BtnSpeedUp" type="Button" parent="Panel/VBoxContainer/HBoxSpeed" unique_id=1622348134]
+unique_name_in_owner = true
+layout_mode = 2
+text = "加速"
+
+[node name="ItemList" type="ItemList" parent="Panel/VBoxContainer" unique_id=1608597404]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(300, 400)
+layout_mode = 2
+size_flags_vertical = 3
+focus_mode = 0

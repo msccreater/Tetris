@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://chefknmb34lua"]
+
+[ext_resource type="PackedScene" uid="uid://bj8kelplv33yp" path="res://scenes/theme/sea_effect.tscn" id="1_3lmyj"]
+[ext_resource type="Script" uid="uid://dwp6c85176fap" path="res://scenes/theme/BackGround.gd" id="1_vs8lr"]
+[ext_resource type="PackedScene" uid="uid://cmt6mrdgmh622" path="res://scenes/theme/block_effect.tscn" id="2_vs8lr"]
+[ext_resource type="PackedScene" uid="uid://chf3bihfxtf3k" path="res://scenes/theme/bubble_effect.tscn" id="4_royqd"]
+[ext_resource type="PackedScene" uid="uid://o7t8ski4qmfd" path="res://scenes/theme/starry_effect.tscn" id="5_jlkwx"]
+
+[node name="BackGround" type="CanvasLayer" unique_id=1997861872]
+layer = -100
+script = ExtResource("1_vs8lr")
+
+[node name="SeaEffect" parent="." unique_id=2014600577 instance=ExtResource("1_3lmyj")]
+
+[node name="BlockEffect" parent="." unique_id=1097983023 instance=ExtResource("2_vs8lr")]
+process_mode = 4
+
+[node name="BubbleEffect" parent="." unique_id=1525286597 instance=ExtResource("4_royqd")]
+process_mode = 4
+
+[node name="StarryEffect" parent="." unique_id=325099756 instance=ExtResource("5_jlkwx")]
+process_mode = 4

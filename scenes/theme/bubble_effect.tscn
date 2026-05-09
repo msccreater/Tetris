@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://chf3bihfxtf3k"]
+
+[ext_resource type="Script" uid="uid://dfq5bnmk8cdf" path="res://scenes/theme/bubble_effect.gd" id="1_dl5ov"]
+
+[node name="BubbleEffect" type="Node2D" unique_id=1525286597]
+script = ExtResource("1_dl5ov")
